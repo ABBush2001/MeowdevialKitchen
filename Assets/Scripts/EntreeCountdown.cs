@@ -7,12 +7,22 @@ public class EntreeCountdown : MonoBehaviour
 {
     public TextMeshProUGUI entreeCountdown;
 
-    public void CountDown()
+    public GameObject pot;
+
+    public GameObject rabbit;
+    public GameObject lamb;
+    public GameObject witch;
+    public GameObject pig;
+    public GameObject turkey;
+    public GameObject bat;
+
+    
+    public void CountDown(int i)
     {
-        StartCoroutine(countdownClock());
+        StartCoroutine(countdownClock(i));
     }
 
-    IEnumerator countdownClock()
+    IEnumerator countdownClock(int i)
     {
         float countdown = float.Parse(entreeCountdown.text);
         Debug.Log(countdown);
@@ -24,5 +34,43 @@ public class EntreeCountdown : MonoBehaviour
         }
 
         entreeCountdown.text = "";
+
+        //spawn item based on i
+        if(i == 0)
+        {
+            GameObject entree = Instantiate(lamb);
+            entree.transform.SetPositionAndRotation(pot.transform.position, Quaternion.identity);
+            entree.transform.SetParent(pot.transform);
+        }
+        else if(i == 1)
+        {
+            GameObject entree = Instantiate(rabbit);
+            entree.transform.SetPositionAndRotation(pot.transform.position, Quaternion.identity);
+            entree.transform.SetParent(pot.transform);
+        }
+        else if(i == 2)
+        {
+            GameObject entree = Instantiate(witch);
+            entree.transform.SetPositionAndRotation(pot.transform.position, Quaternion.identity);
+            entree.transform.SetParent(pot.transform);
+        }
+        else if(i == 3)
+        {
+            GameObject entree = Instantiate(bat);
+            entree.transform.SetPositionAndRotation(pot.transform.position, Quaternion.identity);
+            entree.transform.SetParent(pot.transform);
+        }
+        else if(i == 4)
+        {
+            GameObject entree = Instantiate(pig);
+            entree.transform.SetPositionAndRotation(pot.transform.position, Quaternion.identity);
+            entree.transform.SetParent(pot.transform);
+        }
+        else if(i == 5)
+        {
+            GameObject entree = Instantiate(turkey);
+            entree.transform.SetPositionAndRotation(pot.transform.position, Quaternion.identity);
+            entree.transform.SetParent(pot.transform);
+        }
     }
 }

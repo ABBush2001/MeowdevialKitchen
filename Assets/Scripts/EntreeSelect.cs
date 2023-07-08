@@ -7,11 +7,13 @@ public class EntreeSelect : MonoBehaviour
 {
     public GameObject entreeOutline;
     public GameObject entreePanel;
+    public GameObject currentDrag;
     public TextMeshProUGUI entreeCountdown;
+
 
     private void OnMouseDown()
     {
-        if (entreeCountdown.text == "")
+        if (entreeCountdown.text == "" && this.gameObject.transform.childCount < 1 && currentDrag.transform.childCount < 1)
         {
             entreePanel.SetActive(true);
         }
@@ -19,7 +21,7 @@ public class EntreeSelect : MonoBehaviour
 
     private void OnMouseEnter()
     {
-        if (entreeCountdown.text == "")
+        if (entreeCountdown.text == "" && this.gameObject.transform.childCount < 1 && currentDrag.transform.childCount < 1)
         {
             entreeOutline.SetActive(true);
         }

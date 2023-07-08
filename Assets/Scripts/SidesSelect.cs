@@ -7,11 +7,12 @@ public class SidesSelect : MonoBehaviour
 {
     public GameObject sidesOutline;
     public GameObject sidesPanel;
+    public GameObject currentDrag;
     public TextMeshProUGUI sidesCountdown;
 
     private void OnMouseDown()
     {
-        if (sidesCountdown.text == "")
+        if (sidesCountdown.text == "" && this.gameObject.transform.childCount < 1 && currentDrag.transform.childCount < 1)
         {
             sidesPanel.SetActive(true);
         }
@@ -19,7 +20,7 @@ public class SidesSelect : MonoBehaviour
 
     private void OnMouseEnter()
     {
-        if (sidesCountdown.text == "")
+        if (sidesCountdown.text == "" && this.gameObject.transform.childCount < 1 && currentDrag.transform.childCount < 1)
         {
             sidesOutline.SetActive(true);
         }
