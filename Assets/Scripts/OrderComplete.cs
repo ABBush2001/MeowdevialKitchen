@@ -37,13 +37,26 @@ public class OrderComplete : MonoBehaviour
     {
         string tmpRealOrder = "";
 
-        gameManager.GetComponent<MeadMinigameManager>().UpdateMeadCount();
+        string tmp1 = "";
+        string tmp2 = "";
 
         Debug.Log(plate1.transform.GetChild(0).gameObject.name);
         //add items on plate to real order
 
-        string tmp1 = plate1.transform.GetChild(0).transform.GetChild(0).gameObject.name.Replace("(Clone)", "");
-        string tmp2 = plate1.transform.GetChild(0).transform.GetChild(1).gameObject.name.Replace("(Clone)", "");
+        for(int i = 0; i < plate1.transform.GetChild(0).transform.childCount; i++)
+        {
+            if(plate1.transform.GetChild(0).transform.GetChild(i).gameObject.activeSelf && tmp1 == "")
+            {
+                tmp1 = plate1.transform.GetChild(0).transform.GetChild(i).gameObject.name.Replace("(Clone)", "");
+            }
+            else if(plate1.transform.GetChild(0).transform.GetChild(i).gameObject.activeSelf && tmp2 == "")
+            {
+                tmp2 = plate1.transform.GetChild(0).transform.GetChild(i).gameObject.name.Replace("(Clone)", "");
+            }
+        }
+
+        
+
 
         if (gameManager.GetComponent<GenerateOrder>().entreeMap.ContainsValue(tmp1))
         {
@@ -91,13 +104,23 @@ public class OrderComplete : MonoBehaviour
     {
         string tmpRealOrder = "";
 
-        gameManager.GetComponent<MeadMinigameManager>().UpdateMeadCount();
+        string tmp1 = "";
+        string tmp2 = "";
 
         gameManager.GetComponent<OrderCompletionTracker>().setCompleteOriginalOrder(plate2.transform.GetChild(0).GetComponent<CurrentPlateOrder>().getOrder());
         //add items on plate to real order
 
-        string tmp1 = plate2.transform.GetChild(0).transform.GetChild(0).gameObject.name.Replace("(Clone)", "");
-        string tmp2 = plate2.transform.GetChild(0).transform.GetChild(1).gameObject.name.Replace("(Clone)", "");
+        for (int i = 0; i < plate2.transform.GetChild(0).transform.childCount; i++)
+        {
+            if (plate2.transform.GetChild(0).transform.GetChild(i).gameObject.activeSelf && tmp1 == "")
+            {
+                tmp1 = plate2.transform.GetChild(0).transform.GetChild(i).gameObject.name.Replace("(Clone)", "");
+            }
+            else if (plate2.transform.GetChild(0).transform.GetChild(i).gameObject.activeSelf && tmp2 == "")
+            {
+                tmp2 = plate2.transform.GetChild(0).transform.GetChild(i).gameObject.name.Replace("(Clone)", "");
+            }
+        }
 
         if (gameManager.GetComponent<GenerateOrder>().entreeMap.ContainsValue(tmp1))
         {
@@ -115,21 +138,25 @@ public class OrderComplete : MonoBehaviour
         {
             Destroy(order1.transform.GetChild(0).gameObject);
             orderPanel1.SetActive(false);
+            tmpRealOrder += "1";
         }
         else if (customerNum2.text.Contains("2"))
         {
             Destroy(order2.transform.GetChild(0).gameObject);
             orderPanel2.SetActive(false);
+            tmpRealOrder += "2";
         }
         else if (customerNum2.text.Contains("3"))
         {
             Destroy(order3.transform.GetChild(0).gameObject);
             orderPanel3.SetActive(false);
+            tmpRealOrder += "3";
         }
         else
         {
             Destroy(order4.transform.GetChild(0).gameObject);
             orderPanel4.SetActive(false);
+            tmpRealOrder += "4";
         }
         gameManager.GetComponent<OrderCompletionTracker>().setCompleteRealOrder(tmpRealOrder);
         completeButton2.SetActive(false);
@@ -141,13 +168,23 @@ public class OrderComplete : MonoBehaviour
     {
         string tmpRealOrder = "";
 
-        gameManager.GetComponent<MeadMinigameManager>().UpdateMeadCount();
-
         gameManager.GetComponent<OrderCompletionTracker>().setCompleteOriginalOrder(plate3.transform.GetChild(0).GetComponent<CurrentPlateOrder>().getOrder());
         //add items on plate to real order
 
-        string tmp1 = plate3.transform.GetChild(0).transform.GetChild(0).gameObject.name.Replace("(Clone)", "");
-        string tmp2 = plate3.transform.GetChild(0).transform.GetChild(1).gameObject.name.Replace("(Clone)", "");
+        string tmp1 = "";
+        string tmp2 = "";
+
+        for (int i = 0; i < plate3.transform.GetChild(0).transform.childCount; i++)
+        {
+            if (plate3.transform.GetChild(0).transform.GetChild(i).gameObject.activeSelf && tmp1 == "")
+            {
+                tmp1 = plate3.transform.GetChild(0).transform.GetChild(i).gameObject.name.Replace("(Clone)", "");
+            }
+            else if (plate3.transform.GetChild(0).transform.GetChild(i).gameObject.activeSelf && tmp2 == "")
+            {
+                tmp2 = plate3.transform.GetChild(0).transform.GetChild(i).gameObject.name.Replace("(Clone)", "");
+            }
+        }
 
         if (gameManager.GetComponent<GenerateOrder>().entreeMap.ContainsValue(tmp1))
         {
@@ -165,21 +202,25 @@ public class OrderComplete : MonoBehaviour
         {
             Destroy(order1.transform.GetChild(0).gameObject);
             orderPanel1.SetActive(false);
+            tmpRealOrder += "1";
         }
         else if (customerNum3.text.Contains("2"))
         {
             Destroy(order2.transform.GetChild(0).gameObject);
             orderPanel2.SetActive(false);
+            tmpRealOrder += "2";
         }
         else if (customerNum3.text.Contains("3"))
         {
             Destroy(order3.transform.GetChild(0).gameObject);
             orderPanel3.SetActive(false);
+            tmpRealOrder += "3";
         }
         else
         {
             Destroy(order4.transform.GetChild(0).gameObject);
             orderPanel4.SetActive(false);
+            tmpRealOrder += "4";
         }
         gameManager.GetComponent<OrderCompletionTracker>().setCompleteRealOrder(tmpRealOrder);
         completeButton3.SetActive(false);
@@ -191,13 +232,23 @@ public class OrderComplete : MonoBehaviour
     {
         string tmpRealOrder = "";
 
-        gameManager.GetComponent<MeadMinigameManager>().UpdateMeadCount();
-
         gameManager.GetComponent<OrderCompletionTracker>().setCompleteOriginalOrder(plate4.transform.GetChild(0).GetComponent<CurrentPlateOrder>().getOrder());
         //add items on plate to real order
 
-        string tmp1 = plate4.transform.GetChild(0).transform.GetChild(0).gameObject.name.Replace("(Clone)", "");
-        string tmp2 = plate4.transform.GetChild(0).transform.GetChild(1).gameObject.name.Replace("(Clone)", "");
+        string tmp1 = "";
+        string tmp2 = "";
+
+        for (int i = 0; i < plate4.transform.GetChild(0).transform.childCount; i++)
+        {
+            if (plate4.transform.GetChild(0).transform.GetChild(i).gameObject.activeSelf && tmp1 == "")
+            {
+                tmp1 = plate4.transform.GetChild(0).transform.GetChild(i).gameObject.name.Replace("(Clone)", "");
+            }
+            else if (plate4.transform.GetChild(0).transform.GetChild(i).gameObject.activeSelf && tmp2 == "")
+            {
+                tmp2 = plate4.transform.GetChild(0).transform.GetChild(i).gameObject.name.Replace("(Clone)", "");
+            }
+        }
 
         if (gameManager.GetComponent<GenerateOrder>().entreeMap.ContainsValue(tmp1))
         {
@@ -215,21 +266,25 @@ public class OrderComplete : MonoBehaviour
         {
             Destroy(order1.transform.GetChild(0).gameObject);
             orderPanel1.SetActive(false);
+            tmpRealOrder += "1";
         }
         else if (customerNum4.text.Contains("2"))
         {
             Destroy(order2.transform.GetChild(0).gameObject);
             orderPanel2.SetActive(false);
+            tmpRealOrder += "2";
         }
         else if (customerNum4.text.Contains("3"))
         {
             Destroy(order3.transform.GetChild(0).gameObject);
             orderPanel3.SetActive(false);
+            tmpRealOrder += "3";
         }
         else
         {
             Destroy(order4.transform.GetChild(0).gameObject);
             orderPanel4.SetActive(false);
+            tmpRealOrder += "4";
         }
         gameManager.GetComponent<OrderCompletionTracker>().setCompleteRealOrder(tmpRealOrder);
         completeButton4.SetActive(false);

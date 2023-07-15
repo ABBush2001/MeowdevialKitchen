@@ -15,7 +15,8 @@ public class LevelTimeManager : MonoBehaviour
         if(timerText.text == "")
         {
             //reload level
-            gameManager.GetComponent<SceneLoader>().loadScene1();
+            //gameManager.GetComponent<SceneLoader>().loadScene1();
+            gameManager.GetComponent<ScoreManager>().ShowResultsScreen();
         }
     }
 }

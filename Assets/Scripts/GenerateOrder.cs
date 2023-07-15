@@ -58,7 +58,7 @@ public class GenerateOrder : MonoBehaviour
 
 
         entreeMap.Add(0, "Lamb Stew");
-        entreeMap.Add(1, "Rabbit Stew");
+        entreeMap.Add(1, "Garlic Stew");
         entreeMap.Add(2, "Roasted Pig");
         entreeMap.Add(3, "Turkey Leg");
         entreeMap.Add(4, "Witches' Brew");
@@ -69,11 +69,11 @@ public class GenerateOrder : MonoBehaviour
         sidesMap.Add(2, "Beans");
 
         entreeMapInverse.Add("Lamb Stew", 0);
-        entreeMapInverse.Add("Rabbit Stew", 1);
+        entreeMapInverse.Add("Garlic Stew", 1);
         entreeMapInverse.Add("Roasted Pig", 2);
         entreeMapInverse.Add("Turkey Leg", 3);
-        entreeMapInverse.Add("Witches' Brew", 5);
-        entreeMapInverse.Add("Fried Bat", 6);
+        entreeMapInverse.Add("Witches' Brew", 4);
+        entreeMapInverse.Add("Fried Bat", 5);
 
         sidesMapInverse.Add("Baked Potato", 0);
         sidesMapInverse.Add("Bread", 1);
@@ -86,59 +86,73 @@ public class GenerateOrder : MonoBehaviour
           Seat IDs:
           1 - 4
          */
+        //randomly generate values between 0 and 3 for entree, and between 0 and 2 for sides
 
-        if(customer.name == "HumanPeasant(Clone)")
+        int entree = 0;
+        int side = 0;
+
+        if (customer.gameObject.name == "HumanPeasant(Clone)" || customer.gameObject.name == "Wizard(Clone)")
         {
-            //randomly generate values between 0 and 3 for entree, and between 0 and 2 for sides
-            int entree = Random.Range(0, 3);
-            int side = Random.Range(0, 2);
-            int seat;
-
-            if(customer.transform.parent.name == "Seat1")
-            {
-                seat = 1;
-            }
-            else if(customer.transform.parent.name == "Seat2")
-            {
-                seat = 2;
-            }
-            else if(customer.transform.parent.name == "Seat3")
-            {
-                seat = 3;
-            }
-            else
-            {
-                seat = 4;
-            }
-
-            string order = entree.ToString() + "" + side.ToString() + "" + seat.ToString();
-            gameManager.GetComponent<OrderManager>().AddOrder(order);
-
-            //update panel
-            if(seat == 1)
-            {
-                panel1.SetActive(true);
-                entreeText1.text = entreeMap[entree];
-                sideText1.text = sidesMap[side];
-            }
-            else if(seat == 2)
-            {
-                panel2.SetActive(true);
-                entreeText2.text = entreeMap[entree];
-                sideText2.text = sidesMap[side];
-            }
-            else if(seat == 3)
-            {
-                panel3.SetActive(true);
-                entreeText3.text = entreeMap[entree];
-                sideText3.text = sidesMap[side];
-            }
-            else
-            {
-                panel4.SetActive(true);
-                entreeText4.text = entreeMap[entree];
-                sideText4.text = sidesMap[side];
-            }
+            entree = Random.Range(0, 4);
+            side = Random.Range(0, 3);
         }
+        else if(customer.gameObject.name == "Orc(Clone)")
+        {
+            entree = Random.Range(4, 6);
+            side = Random.Range(0, 3);
+        }
+        else if(customer.gameObject.name == "Vampire(Clone)")
+        {
+            entree = 1;
+            side = Random.Range(0, 3);
+        }
+
+        int seat;
+
+        if (customer.transform.parent.name == "Seat1")
+         {
+            seat = 1;
+         }
+         else if(customer.transform.parent.name == "Seat2")
+         {
+            seat = 2;
+         }
+         else if(customer.transform.parent.name == "Seat3")
+         {
+            seat = 3;
+         }
+         else
+         {
+            seat = 4;
+         }
+
+         string order = entree.ToString() + "" + side.ToString() + "" + seat.ToString();
+         gameManager.GetComponent<OrderManager>().AddOrder(order);
+
+         //update panel
+         if(seat == 1)
+         {
+            panel1.SetActive(true);
+            entreeText1.text = entreeMap[entree];
+            sideText1.text = sidesMap[side];
+         }
+         else if(seat == 2)
+         {
+            panel2.SetActive(true);
+            entreeText2.text = entreeMap[entree];
+            sideText2.text = sidesMap[side];
+         }
+         else if(seat == 3)
+         {
+            panel3.SetActive(true);
+            entreeText3.text = entreeMap[entree];
+            sideText3.text = sidesMap[side];
+         }
+         else
+         {
+            panel4.SetActive(true);
+            entreeText4.text = entreeMap[entree];
+            sideText4.text = sidesMap[side];
+         }
     }
 }

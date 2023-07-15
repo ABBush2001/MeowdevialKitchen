@@ -16,7 +16,7 @@ public class EntreeButtonController : MonoBehaviour
         gameManager.GetComponent<EntreeCountdown>().CountDown(0);
     }
 
-    public void RabbitStewSelected()
+    public void GarlicStewSelected()
     {
         entreePanel.SetActive(false);
         entreeCountdown.text = "20";

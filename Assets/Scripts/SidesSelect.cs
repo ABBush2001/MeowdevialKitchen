@@ -20,10 +20,10 @@ public class SidesSelect : MonoBehaviour
 
     private void OnMouseEnter()
     {
-        if (sidesCountdown.text == "" && this.gameObject.transform.childCount < 1 && currentDrag.transform.childCount < 1)
+        /*if (sidesCountdown.text == "" && this.gameObject.transform.childCount < 1 && currentDrag.transform.childCount < 1)
         {
             sidesOutline.SetActive(true);
-        }
+        }*/
     }
 
     private void OnMouseExit()

@@ -16,7 +16,10 @@ public class EntreeCountdown : MonoBehaviour
     public GameObject turkey;
     public GameObject bat;
 
-    
+    public AudioSource potSound;
+    public Sprite boilingPot;
+    public Sprite regularPot;
+
     public void CountDown(int i)
     {
         StartCoroutine(countdownClock(i));
@@ -24,6 +27,8 @@ public class EntreeCountdown : MonoBehaviour
 
     IEnumerator countdownClock(int i)
     {
+        potSound.Play();
+        pot.GetComponent<SpriteRenderer>().sprite = boilingPot;
         float countdown = float.Parse(entreeCountdown.text);
         Debug.Log(countdown);
         while (countdown > 0)
@@ -34,6 +39,8 @@ public class EntreeCountdown : MonoBehaviour
         }
 
         entreeCountdown.text = "";
+        potSound.Stop();
+        pot.GetComponent<SpriteRenderer>().sprite = regularPot;
 
         //spawn item based on i
         if(i == 0)

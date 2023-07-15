@@ -10,11 +10,25 @@ public class FoodDrop : MonoBehaviour
     {
         if (currentDrag.transform.childCount > 0)
         {
-            currentDrag.transform.GetChild(0).gameObject.GetComponent<FoodDrag>().beingDragged = false;
+            //Activate food on plate and destroy dragged object
+            string food = currentDrag.transform.GetChild(0).name.Replace("(Clone)", "");
+
+            for (int i = 0; i < this.transform.childCount; i++)
+            {
+                if (this.transform.GetChild(i).name == food)
+                {
+                    this.transform.GetChild(i).gameObject.SetActive(true);
+                }
+            }
+
+            Destroy(currentDrag.transform.GetChild(0).gameObject);
+            this.gameObject.GetComponent<CurrentPlateOrder>().updateOrder();
+
+            /*currentDrag.transform.GetChild(0).gameObject.GetComponent<FoodDrag>().beingDragged = false;
             currentDrag.transform.GetChild(0).transform.SetPositionAndRotation(this.gameObject.transform.position, Quaternion.identity);
             currentDrag.transform.GetChild(0).transform.localScale = new Vector3(0.25f, 0.25f, 0.25f);
             currentDrag.transform.GetChild(0).SetParent(this.gameObject.transform);
-            this.gameObject.GetComponent<CurrentPlateOrder>().updateOrder();
+            this.gameObject.GetComponent<CurrentPlateOrder>().updateOrder();*/
         }
     }
 

@@ -82,7 +82,7 @@ public class SpawnPlates : MonoBehaviour
                         gameManager.GetComponent<OrderCompletionTracker>().complete1 = false;
                     }
                 }
-                else if(order2Seat.transform.childCount < 1)
+                if(order2Seat.transform.childCount < 1)
                 {
                     if (gameManager.GetComponent<OrderManager>().getOrderBySeatNum("2") != "")
                     {
@@ -91,7 +91,7 @@ public class SpawnPlates : MonoBehaviour
                         tempPlate.transform.parent = order2Seat.transform;
                         tempPlate.GetComponent<CurrentPlateOrder>().setOrder(gameManager.GetComponent<OrderManager>().getOrderBySeatNum("2"));
                         char[] orderNums = tempPlate.GetComponent<CurrentPlateOrder>().getOrder().ToCharArray();
-                        order2 = tempPlate.GetComponent<CurrentPlateOrder>().getOrder();
+                        //order2 = tempPlate.GetComponent<CurrentPlateOrder>().getOrder();
                         order2Text.text = "Customer #" + orderNums[2];
                         order2Button.SetActive(true);
                         entree2Text.text = gameManager.GetComponent<GenerateOrder>().entreeMap[(int)char.GetNumericValue(orderNums[0])];
@@ -99,7 +99,7 @@ public class SpawnPlates : MonoBehaviour
                         gameManager.GetComponent<OrderCompletionTracker>().complete2 = false;
                     }
                 }
-                else if(order3Seat.transform.childCount < 1)
+                if(order3Seat.transform.childCount < 1)
                 {
                     if (gameManager.GetComponent<OrderManager>().getOrderBySeatNum("3") != "")
                     {
@@ -108,7 +108,7 @@ public class SpawnPlates : MonoBehaviour
                         tempPlate.transform.parent = order3Seat.transform;
                         tempPlate.GetComponent<CurrentPlateOrder>().setOrder(gameManager.GetComponent<OrderManager>().getOrderBySeatNum("3"));
                         char[] orderNums = tempPlate.GetComponent<CurrentPlateOrder>().getOrder().ToCharArray();
-                        order3 = tempPlate.GetComponent<CurrentPlateOrder>().getOrder();
+                        //order3 = tempPlate.GetComponent<CurrentPlateOrder>().getOrder();
                         order3Text.text = "Customer #" + orderNums[2];
                         order3Button.SetActive(true);
                         entree3Text.text = gameManager.GetComponent<GenerateOrder>().entreeMap[(int)char.GetNumericValue(orderNums[0])];
@@ -116,7 +116,7 @@ public class SpawnPlates : MonoBehaviour
                         gameManager.GetComponent<OrderCompletionTracker>().complete3 = false;
                     }
                 }
-                else if(order4Seat.transform.childCount < 1)
+                if(order4Seat.transform.childCount < 1)
                 {
                     if (gameManager.GetComponent<OrderManager>().getOrderBySeatNum("4") != "")
                     {
@@ -125,7 +125,7 @@ public class SpawnPlates : MonoBehaviour
                         tempPlate.transform.parent = order4Seat.transform;
                         tempPlate.GetComponent<CurrentPlateOrder>().setOrder(gameManager.GetComponent<OrderManager>().getOrderBySeatNum("4"));
                         char[] orderNums = tempPlate.GetComponent<CurrentPlateOrder>().getOrder().ToCharArray();
-                        order4 = tempPlate.GetComponent<CurrentPlateOrder>().getOrder();
+                        //order4 = tempPlate.GetComponent<CurrentPlateOrder>().getOrder();
                         order4Text.text = "Customer #" + orderNums[2];
                         order4Button.SetActive(true);
                         entree4Text.text = gameManager.GetComponent<GenerateOrder>().entreeMap[(int)char.GetNumericValue(orderNums[0])];
