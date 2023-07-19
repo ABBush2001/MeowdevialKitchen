@@ -20,7 +20,7 @@ public class CustomerSelect : MonoBehaviour
     {
         if (this.transform.GetChild(0).gameObject.activeSelf)
         {
-            selectSound.Play();
+            StartCoroutine(playSound());
             Debug.Log("Clicked!");
             gameManager.GetComponent<GenerateOrder>().genOrder(this.gameObject);
             orderTaken = true;
@@ -46,5 +46,12 @@ public class CustomerSelect : MonoBehaviour
     void Update()
     {
         
+    }
+
+    IEnumerator playSound()
+    {
+        selectSound.Play();
+        yield return new WaitForSeconds(2);
+        selectSound.Stop();
     }
 }

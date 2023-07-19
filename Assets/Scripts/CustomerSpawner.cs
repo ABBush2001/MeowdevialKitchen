@@ -39,24 +39,28 @@ public class CustomerSpawner : MonoBehaviour
 
                 GameObject customer = Instantiate(characterMap[tmpRand]);
                 customer.transform.SetPositionAndRotation(seat1.transform.position, Quaternion.identity);
+                customer.transform.position += new Vector3(0, 1, 0);
                 customer.transform.SetParent(seat1.transform);
             }
             else if(seat2.transform.childCount == 0)
             {
                 GameObject customer = Instantiate(characterMap[tmpRand]);
                 customer.transform.SetPositionAndRotation(seat2.transform.position, Quaternion.identity);
+                customer.transform.position += new Vector3(0, 1, 0);
                 customer.transform.SetParent(seat2.transform);
             }
             else if(seat3.transform.childCount == 0)
             {
                 GameObject customer = Instantiate(characterMap[tmpRand]);
                 customer.transform.SetPositionAndRotation(seat3.transform.position, Quaternion.identity);
+                customer.transform.position += new Vector3(0, 1, 0);
                 customer.transform.SetParent(seat3.transform);
             }
             else if(seat4.transform.childCount == 0)
             {
                 GameObject customer = Instantiate(characterMap[tmpRand]);
                 customer.transform.SetPositionAndRotation(seat4.transform.position, Quaternion.identity);
+                customer.transform.position += new Vector3(0, 1, 0);
                 customer.transform.SetParent(seat4.transform);
             }
         }

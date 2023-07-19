@@ -35,6 +35,4 @@ public class ScoreManager : MonoBehaviour
         resultsScreen.SetActive(true);
         scoreText.text = "Score: " + currentScore.ToString();
     }
-
-    
 }

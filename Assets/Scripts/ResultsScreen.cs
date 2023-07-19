@@ -84,7 +84,7 @@ public class ResultsScreen : MonoBehaviour
             gameManager.GetComponent<OrderManager>().removeOrder(originalOrder);
         }
 
-        coinsJingle.Play();
+        StartCoroutine(playSound());
         resultsScreen.SetActive(true);
     }
 
@@ -93,5 +93,12 @@ public class ResultsScreen : MonoBehaviour
         resultsScreen.SetActive(false);
 
         gameManager.GetComponent<MeadMinigameManager>().UpdateMeadCount();
+    }
+
+    IEnumerator playSound()
+    {
+        coinsJingle.Play();
+        yield return new WaitForSeconds(2);
+        coinsJingle.Stop();
     }
 }

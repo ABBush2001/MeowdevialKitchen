@@ -92,7 +92,7 @@ public class MovingSlider : MonoBehaviour
                     break;
                 }
 
-                this.GetComponent<Slider>().value += 0.01f;
+                this.GetComponent<Slider>().value += 0.1f;
                 yield return new WaitForSeconds(0.001f);
             }
 
@@ -108,7 +108,7 @@ public class MovingSlider : MonoBehaviour
                     break;
                 }
 
-                this.GetComponent<Slider>().value -= 0.01f;
+                this.GetComponent<Slider>().value -= 0.1f;
                 yield return new WaitForSeconds(0.001f);
             }
 
