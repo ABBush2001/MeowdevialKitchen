@@ -5,7 +5,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 
-public class MovingSlider : MonoBehaviour
+public class MovingSliderMeat : MonoBehaviour
 {
     public GameObject gameManager;
     public TextMeshProUGUI sliderText;
@@ -37,25 +37,24 @@ public class MovingSlider : MonoBehaviour
     {
         clicked = true;
 
-
-        //witches' brew
+        //Fried bat
         if((this.GetComponent<Slider>().value > 0 && this.GetComponent<Slider>().value < 5) || (this.GetComponent<Slider>().value > 15 && this.GetComponent<Slider>().value < 20))
         {
-            gameManager.GetComponent<EntreeButtonController>().WitchesBrewSelected();
+            gameManager.GetComponent<EntreeButtonController>().FriedBatSelected();
             sliderText.text = "";
             this.gameObject.SetActive(false);
         }
-        //garlic stew
+        //Turkey leg
         else if((this.GetComponent<Slider>().value > 5 && this.GetComponent<Slider>().value < 8) || (this.GetComponent<Slider>().value > 12 && this.GetComponent<Slider>().value < 15))
         {
-            gameManager.GetComponent<EntreeButtonController>().GarlicStewSelected();
+            gameManager.GetComponent<EntreeButtonController>().TurkeyLegSelected();
             sliderText.text = "";
             this.gameObject.SetActive(false);
         }
-        //lamb stew
+        //Roasted pig
         else
         {
-            gameManager.GetComponent<EntreeButtonController>().LambStewSelected();
+            gameManager.GetComponent<EntreeButtonController>().RoastedPigSelected();
             sliderText.text = "";
             this.gameObject.SetActive(false);
         }

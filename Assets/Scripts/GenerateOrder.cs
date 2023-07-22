@@ -91,7 +91,7 @@ public class GenerateOrder : MonoBehaviour
         int entree = 0;
         int side = 0;
 
-        if (customer.gameObject.name == "HumanPeasant(Clone)" || customer.gameObject.name == "Wizard(Clone)")
+        if (customer.gameObject.name == "HumanPeasant(Clone)" || customer.gameObject.name == "Wizard(Clone)" || customer.gameObject.name == "Prince(Clone)")
         {
             entree = Random.Range(0, 4);
             side = Random.Range(0, 3);

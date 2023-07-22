@@ -30,7 +30,6 @@ public class OrderCompletionTracker : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
     }
 
     // Update is called once per frame
@@ -41,24 +40,56 @@ public class OrderCompletionTracker : MonoBehaviour
             order1Button.SetActive(false);
             order1CompleteButton.SetActive(true);
             complete1 = true;
+
+            for(int i = 0; i < order1.transform.GetChild(0).transform.childCount; i++)
+            {
+                if(order1.transform.GetChild(0).transform.GetChild(i).gameObject.name == "Cup")
+                {
+                    order1.transform.GetChild(0).transform.GetChild(i).gameObject.SetActive(true);
+                }
+            }
         }
         else if(order2.transform.childCount > 0 && order2.transform.GetChild(0).GetComponent<CurrentPlateOrder>().getTally() == 2 && complete2 == false)
         {
             order2Button.SetActive(false);
             order2CompleteButton.SetActive(true);
             complete2 = true;
+
+            for (int i = 0; i < order2.transform.GetChild(0).transform.childCount; i++)
+            {
+                if (order2.transform.GetChild(0).transform.GetChild(i).gameObject.name == "Cup")
+                {
+                    order2.transform.GetChild(0).transform.GetChild(i).gameObject.SetActive(true);
+                }
+            }
         }
         else if(order3.transform.childCount > 0 && order3.transform.GetChild(0).GetComponent<CurrentPlateOrder>().getTally() == 2 && complete3 == false)
         {
             order3Button.SetActive(false);
             order3CompleteButton.SetActive(true);
             complete3 = true;
+
+            for (int i = 0; i < order3.transform.GetChild(0).transform.childCount; i++)
+            {
+                if (order3.transform.GetChild(0).transform.GetChild(i).gameObject.name == "Cup")
+                {
+                    order3.transform.GetChild(0).transform.GetChild(i).gameObject.SetActive(true);
+                }
+            }
         }
         else if(order4.transform.childCount > 0 && order4.transform.GetChild(0).GetComponent<CurrentPlateOrder>().getTally() == 2 && complete4 == false)
         {
             order4Button.SetActive(false);
             order4CompleteButton.SetActive(true);
             complete4 = true;
+
+            for (int i = 0; i < order4.transform.GetChild(0).transform.childCount; i++)
+            {
+                if (order4.transform.GetChild(0).transform.GetChild(i).gameObject.name == "Cup")
+                {
+                    order4.transform.GetChild(0).transform.GetChild(i).gameObject.SetActive(true);
+                }
+            }
         }
     }
 

@@ -10,30 +10,51 @@ public class EntreeSelect : MonoBehaviour
     public GameObject currentDrag;
     public TextMeshProUGUI entreeCountdown;
 
-    public GameObject entreeSlider;
+    public GameObject soupSlider;
+    public GameObject meatSlider;
     public TextMeshProUGUI sliderText;
 
+    public TextMeshProUGUI meatCountdown;
+
+    public GameObject potOutline;
+    public GameObject meatOutline;
 
     private void OnMouseDown()
     {
-        /*if (entreeCountdown.text == "" && this.gameObject.transform.childCount < 1 && currentDrag.transform.childCount < 1)
-        {
-            entreePanel.SetActive(true);
-        }*/
-        if (this.transform.childCount == 0)
+
+        //for soups
+        if (this.transform.childCount == 0 && this.transform.gameObject.name == "EntreePot" && potOutline.activeSelf)
         {
             sliderText.text = "Click Here to Stop The Slider!";
-            entreeSlider.SetActive(true);
-            entreeSlider.GetComponent<MovingSlider>().StartSlider();
+            soupSlider.SetActive(true);
+            soupSlider.GetComponent<MovingSlider>().StartSlider();
+        }
+        //for meats
+        else if(this.transform.gameObject.name == "RawTurkeyLeg" && meatOutline.activeSelf)
+        {
+            sliderText.text = "Click Here to Stop The Slider!";
+            meatSlider.SetActive(true);
+            meatSlider.GetComponent<MovingSliderMeat>().StartSlider();
         }
     }
 
     private void OnMouseEnter()
     {
-        /*if (entreeCountdown.text == "" && this.gameObject.transform.childCount < 1 && currentDrag.transform.childCount < 1)
+        if(this.gameObject.name == "EntreePot")
         {
-            entreeOutline.SetActive(true);
-        }*/
+            if (entreeCountdown.text == "" && currentDrag.transform.childCount < 1)
+            {
+                entreeOutline.SetActive(true);
+            }
+        }
+        else
+        {
+            if (meatCountdown.text == "" && currentDrag.transform.childCount < 1)
+            {
+                entreeOutline.SetActive(true);
+            }
+        }
+        
     }
 
     private void OnMouseExit()

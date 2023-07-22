@@ -5,49 +5,59 @@ using TMPro;
 
 public class EntreeButtonController : MonoBehaviour
 {
+    public GameObject pot;
+
     public GameObject entreePanel;
-    public TextMeshProUGUI entreeCountdown;
+    public TextMeshProUGUI entreeCountdownSoup;
+    public TextMeshProUGUI entreeCountdownMeat;
     public GameObject gameManager;
+
+    public Sprite lambbroth;
+    public Sprite witchbroth;
+    public Sprite garlicbroth;
 
     public void LambStewSelected()
     {
+        pot.GetComponent<SpriteRenderer>().sprite = lambbroth;
         entreePanel.SetActive(false);
-        entreeCountdown.text = "20";
-        gameManager.GetComponent<EntreeCountdown>().CountDown(0);
+        entreeCountdownSoup.text = "20";
+        gameManager.GetComponent<EntreeCountdown>().CountdownSoup(0);
     }
 
     public void GarlicStewSelected()
     {
+        pot.GetComponent<SpriteRenderer>().sprite = garlicbroth;
         entreePanel.SetActive(false);
-        entreeCountdown.text = "20";
-        gameManager.GetComponent<EntreeCountdown>().CountDown(1);
+        entreeCountdownSoup.text = "20";
+        gameManager.GetComponent<EntreeCountdown>().CountdownSoup(1);
     }
 
     public void WitchesBrewSelected()
     {
+        pot.GetComponent<SpriteRenderer>().sprite = witchbroth;
         entreePanel.SetActive(false);
-        entreeCountdown.text = "20";
-        gameManager.GetComponent<EntreeCountdown>().CountDown(2);
+        entreeCountdownSoup.text = "20";
+        gameManager.GetComponent<EntreeCountdown>().CountdownSoup(2);
     }
 
     public void FriedBatSelected()
     {
         entreePanel.SetActive(false);
-        entreeCountdown.text = "20";
-        gameManager.GetComponent<EntreeCountdown>().CountDown(3);
+        entreeCountdownMeat.text = "20";
+        gameManager.GetComponent<EntreeCountdown>().CountDownMeat(3);
     }
 
     public void RoastedPigSelected()
     {
         entreePanel.SetActive(false);
-        entreeCountdown.text = "20";
-        gameManager.GetComponent<EntreeCountdown>().CountDown(4);
+        entreeCountdownMeat.text = "20";
+        gameManager.GetComponent<EntreeCountdown>().CountDownMeat(4);
     }
 
     public void TurkeyLegSelected()
     {
         entreePanel.SetActive(false);
-        entreeCountdown.text = "20";
-        gameManager.GetComponent<EntreeCountdown>().CountDown(5);
+        entreeCountdownMeat.text = "20";
+        gameManager.GetComponent<EntreeCountdown>().CountDownMeat(5);
     }
 }
