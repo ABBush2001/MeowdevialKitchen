@@ -12,21 +12,21 @@ public class SidesButtonController : MonoBehaviour
     public void PotatoSelected()
     {
         sidesPanel.SetActive(false);
-        sidesCountdown.text = "20";
+        sidesCountdown.text = "5";
         gameManager.GetComponent<SidesCountdown>().CountDown(0);
     }
 
     public void BreadSelected()
     {
         sidesPanel.SetActive(false);
-        sidesCountdown.text = "20";
+        sidesCountdown.text = "5";
         gameManager.GetComponent<SidesCountdown>().CountDown(1);
     }
 
     public void BeansSelected()
     {
         sidesPanel.SetActive(false);
-        sidesCountdown.text = "20";
+        sidesCountdown.text = "5";
         gameManager.GetComponent<SidesCountdown>().CountDown(2);
     }
 }

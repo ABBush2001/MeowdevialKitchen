@@ -6,7 +6,10 @@ public class TavernBtton : MonoBehaviour
 {
     public GameObject gameManager;
 
-    public GameObject highlight;
+    public GameObject kitchenButton;
+    public GameObject tavernButton;
+
+    /*public GameObject highlight;
 
     private void OnMouseDown()
     {
@@ -21,5 +24,12 @@ public class TavernBtton : MonoBehaviour
     private void OnMouseExit()
     {
         highlight.SetActive(false);
+    }*/
+
+    public void ToTavern()
+    {
+        gameManager.GetComponent<SceneManager2>().toTavern();
+        kitchenButton.SetActive(true);
+        tavernButton.SetActive(false);
     }
 }

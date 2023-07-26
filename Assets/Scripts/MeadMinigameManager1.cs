@@ -11,6 +11,8 @@ public class MeadMinigameManager1 : MonoBehaviour
     public GameObject meadScene;
     public GameObject kitchenScene;
 
+    public GameObject tavernButton;
+
     public GameObject slider;
 
     public TextMeshProUGUI part1Text;
@@ -64,5 +66,6 @@ public class MeadMinigameManager1 : MonoBehaviour
         yield return new WaitForSeconds(3);
         kitchenScene.SetActive(true);
         meadScene.SetActive(false);
+        tavernButton.SetActive(true);
     }
 }

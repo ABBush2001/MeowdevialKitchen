@@ -8,6 +8,8 @@ public class MeadMinigameManager : MonoBehaviour
     public GameObject kitchenScene;
     public GameObject meadMinigame;
 
+    public GameObject tavernButton;
+
     public GameObject meadAnim;
 
     public int meadCounter = 0;
@@ -60,6 +62,7 @@ public class MeadMinigameManager : MonoBehaviour
 
     IEnumerator StartMeadAnim()
     {
+        tavernButton.SetActive(false);
         LeanTween.moveLocal(meadAnim.gameObject, new Vector3(71, -46, 0), 1).setEase(LeanTweenType.easeOutElastic);
         meadAudio.Play();
         yield return new WaitForSeconds(2);

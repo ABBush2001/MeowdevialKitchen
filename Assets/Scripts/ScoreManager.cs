@@ -13,6 +13,13 @@ public class ScoreManager : MonoBehaviour
     public AudioSource levelEndSound;
     public AudioSource mainSound;
 
+    public GameObject kitchen;
+    public GameObject tavern;
+    public GameObject mead;
+    public GameObject endScreen;
+
+    public TextMeshProUGUI headScoreText;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -28,10 +35,15 @@ public class ScoreManager : MonoBehaviour
     public void UpdateScore()
     {
         currentScore += 10;
+        headScoreText.text = currentScore.ToString();
     }
 
     public void ShowResultsScreen()
     {
+        kitchen.SetActive(false);
+        tavern.SetActive(false);
+        mead.SetActive(false);
+        endScreen.SetActive(true);
         resultsScreen.SetActive(true);
         scoreText.text = "Score: " + currentScore.ToString();
     }

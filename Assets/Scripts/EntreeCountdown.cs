@@ -54,7 +54,7 @@ public class EntreeCountdown : MonoBehaviour
 
         potSound.Play();
         //pot.GetComponent<SpriteRenderer>().sprite = boilingPot;
-        float countdown = 20;
+        float countdown = 10;
         Debug.Log(countdown);
         while (countdown > 0)
         {
@@ -114,7 +114,7 @@ public class EntreeCountdown : MonoBehaviour
     {
         potSound.Play();
         //pot.GetComponent<SpriteRenderer>().sprite = boilingPot;
-        float countdown = float.Parse(soupCountdown.text);
+        float countdown = 10;
         Debug.Log(countdown);
         while (countdown > 0)
         {

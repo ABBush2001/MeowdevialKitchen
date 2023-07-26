@@ -18,6 +18,8 @@ public class CustomerSpawner : MonoBehaviour
 
     public GameObject placeholder;
 
+    public AudioSource ding;
+
     private Dictionary<int, GameObject>characterMap = new Dictionary<int, GameObject>();
 
     private void Start()
@@ -32,9 +34,6 @@ public class CustomerSpawner : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //if the tavern scene is active AND there is an empty seat
-        if(tavernScene.activeSelf)
-        {
             //roll random value between 0-4, and assign character based on result
             int tmpRand = Random.Range(0, 5);
 
@@ -67,7 +66,6 @@ public class CustomerSpawner : MonoBehaviour
 
                 StartCoroutine(waitToSpawn(tmpRand, seat4));
             }
-        }
     }
 
     IEnumerator waitToSpawn(int character, GameObject seat)
@@ -80,7 +78,7 @@ public class CustomerSpawner : MonoBehaviour
         }
 
         //if character already exists
-        while (GameObject.Find(characterMap[character].name + "(Clone)"))
+        while (seat1.transform.GetChild(0).gameObject.name == characterMap[character].name + "(Clone)" || seat2.transform.GetChild(0).gameObject.name == characterMap[character].name + "(Clone)" || seat3.transform.GetChild(0).gameObject.name == characterMap[character].name + "(Clone)" || seat4.transform.GetChild(0).gameObject.name == characterMap[character].name + "(Clone)")
         {
             Debug.Log("Updated!");
             character = Random.Range(0, 5);
@@ -93,6 +91,7 @@ public class CustomerSpawner : MonoBehaviour
         customer.transform.SetPositionAndRotation(seat.transform.position, Quaternion.identity);
         customer.transform.position += new Vector3(0, 1, 0);
         customer.transform.SetParent(seat.transform);
+        ding.Play();
         StartCoroutine(fadeIn(customer));
     }
 

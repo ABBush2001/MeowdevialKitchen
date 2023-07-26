@@ -51,7 +51,7 @@ public class CustomerSelect : MonoBehaviour
     IEnumerator playSound()
     {
         selectSound.Play();
-        yield return new WaitForSeconds(2);
+        yield return new WaitForSeconds(4);
         selectSound.Stop();
     }
 }

@@ -7,6 +7,9 @@ public class LevelTimer : MonoBehaviour
 {
     public TextMeshProUGUI timer;
 
+    public GameObject settingsPanel;
+    public GameObject tutorialPanel;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -19,8 +22,11 @@ public class LevelTimer : MonoBehaviour
         while (countdown > 0)
         {
             yield return new WaitForSeconds(1);
-            countdown -= 1;
-            timer.text = countdown.ToString();
+            if (!settingsPanel.activeSelf && !tutorialPanel.activeSelf)
+            {
+                countdown -= 1;
+                timer.text = countdown.ToString();
+            }
         }
         timer.text = "";
     }

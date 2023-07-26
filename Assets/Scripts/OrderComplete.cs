@@ -45,17 +45,42 @@ public class OrderComplete : MonoBehaviour
 
         for(int i = 0; i < plate1.transform.GetChild(0).transform.childCount; i++)
         {
-            if(plate1.transform.GetChild(0).transform.GetChild(i).gameObject.activeSelf && tmp1 == "")
+            //for entree
+            if(plate1.transform.GetChild(0).transform.GetChild(i).name == "Entree")
             {
-                tmp1 = plate1.transform.GetChild(0).transform.GetChild(i).gameObject.name.Replace("(Clone)", "");
-            }
-            else if(plate1.transform.GetChild(0).transform.GetChild(i).gameObject.activeSelf && tmp2 == "")
-            {
-                tmp2 = plate1.transform.GetChild(0).transform.GetChild(i).gameObject.name.Replace("(Clone)", "");
-            }
-        }
+                GameObject e_tmp = plate1.transform.GetChild(0).transform.GetChild(i).gameObject;
 
-        
+                for(int k = 0; k < e_tmp.transform.childCount; k++)
+                {
+                    if (e_tmp.transform.GetChild(k).gameObject.activeSelf && tmp1 == "")
+                    {
+                        tmp1 = e_tmp.transform.GetChild(k).gameObject.name.Replace("(Clone)", "");
+                    }
+                    else if (e_tmp.transform.GetChild(k).gameObject.activeSelf && tmp2 == "")
+                    {
+                        tmp2 = e_tmp.transform.GetChild(k).gameObject.name.Replace("(Clone)", "");
+                    }
+                }
+            }
+            //for sides
+            else if(plate1.transform.GetChild(0).transform.GetChild(i).name == "Sides")
+            {
+                GameObject s_tmp = plate1.transform.GetChild(0).transform.GetChild(i).gameObject;
+
+                for (int k = 0; k < s_tmp.transform.childCount; k++)
+                {
+                    if (s_tmp.transform.GetChild(k).gameObject.activeSelf && tmp1 == "")
+                    {
+                        tmp1 = s_tmp.transform.GetChild(k).gameObject.name.Replace("(Clone)", "");
+                    }
+                    else if (s_tmp.transform.GetChild(k).gameObject.activeSelf && tmp2 == "")
+                    {
+                        tmp2 = s_tmp.transform.GetChild(k).gameObject.name.Replace("(Clone)", "");
+                    }
+                }
+            }
+
+        }
 
 
         if (gameManager.GetComponent<GenerateOrder>().entreeMap.ContainsValue(tmp1))
@@ -112,14 +137,41 @@ public class OrderComplete : MonoBehaviour
 
         for (int i = 0; i < plate2.transform.GetChild(0).transform.childCount; i++)
         {
-            if (plate2.transform.GetChild(0).transform.GetChild(i).gameObject.activeSelf && tmp1 == "")
+            //for entree
+            if (plate2.transform.GetChild(0).transform.GetChild(i).name == "Entree")
             {
-                tmp1 = plate2.transform.GetChild(0).transform.GetChild(i).gameObject.name.Replace("(Clone)", "");
+                GameObject e_tmp = plate2.transform.GetChild(0).transform.GetChild(i).gameObject;
+
+                for (int k = 0; k < e_tmp.transform.childCount; k++)
+                {
+                    if (e_tmp.transform.GetChild(k).gameObject.activeSelf && tmp1 == "")
+                    {
+                        tmp1 = e_tmp.transform.GetChild(k).gameObject.name.Replace("(Clone)", "");
+                    }
+                    else if (e_tmp.transform.GetChild(k).gameObject.activeSelf && tmp2 == "")
+                    {
+                        tmp2 = e_tmp.transform.GetChild(k).gameObject.name.Replace("(Clone)", "");
+                    }
+                }
             }
-            else if (plate2.transform.GetChild(0).transform.GetChild(i).gameObject.activeSelf && tmp2 == "")
+            //for sides
+            else if (plate2.transform.GetChild(0).transform.GetChild(i).name == "Sides")
             {
-                tmp2 = plate2.transform.GetChild(0).transform.GetChild(i).gameObject.name.Replace("(Clone)", "");
+                GameObject s_tmp = plate2.transform.GetChild(0).transform.GetChild(i).gameObject;
+
+                for (int k = 0; k < s_tmp.transform.childCount; k++)
+                {
+                    if (s_tmp.transform.GetChild(k).gameObject.activeSelf && tmp1 == "")
+                    {
+                        tmp1 = s_tmp.transform.GetChild(k).gameObject.name.Replace("(Clone)", "");
+                    }
+                    else if (s_tmp.transform.GetChild(k).gameObject.activeSelf && tmp2 == "")
+                    {
+                        tmp2 = s_tmp.transform.GetChild(k).gameObject.name.Replace("(Clone)", "");
+                    }
+                }
             }
+
         }
 
         if (gameManager.GetComponent<GenerateOrder>().entreeMap.ContainsValue(tmp1))
@@ -176,14 +228,41 @@ public class OrderComplete : MonoBehaviour
 
         for (int i = 0; i < plate3.transform.GetChild(0).transform.childCount; i++)
         {
-            if (plate3.transform.GetChild(0).transform.GetChild(i).gameObject.activeSelf && tmp1 == "")
+            //for entree
+            if (plate3.transform.GetChild(0).transform.GetChild(i).name == "Entree")
             {
-                tmp1 = plate3.transform.GetChild(0).transform.GetChild(i).gameObject.name.Replace("(Clone)", "");
+                GameObject e_tmp = plate3.transform.GetChild(0).transform.GetChild(i).gameObject;
+
+                for (int k = 0; k < e_tmp.transform.childCount; k++)
+                {
+                    if (e_tmp.transform.GetChild(k).gameObject.activeSelf && tmp1 == "")
+                    {
+                        tmp1 = e_tmp.transform.GetChild(k).gameObject.name.Replace("(Clone)", "");
+                    }
+                    else if (e_tmp.transform.GetChild(k).gameObject.activeSelf && tmp2 == "")
+                    {
+                        tmp2 = e_tmp.transform.GetChild(k).gameObject.name.Replace("(Clone)", "");
+                    }
+                }
             }
-            else if (plate3.transform.GetChild(0).transform.GetChild(i).gameObject.activeSelf && tmp2 == "")
+            //for sides
+            else if (plate3.transform.GetChild(0).transform.GetChild(i).name == "Sides")
             {
-                tmp2 = plate3.transform.GetChild(0).transform.GetChild(i).gameObject.name.Replace("(Clone)", "");
+                GameObject s_tmp = plate3.transform.GetChild(0).transform.GetChild(i).gameObject;
+
+                for (int k = 0; k < s_tmp.transform.childCount; k++)
+                {
+                    if (s_tmp.transform.GetChild(k).gameObject.activeSelf && tmp1 == "")
+                    {
+                        tmp1 = s_tmp.transform.GetChild(k).gameObject.name.Replace("(Clone)", "");
+                    }
+                    else if (s_tmp.transform.GetChild(k).gameObject.activeSelf && tmp2 == "")
+                    {
+                        tmp2 = s_tmp.transform.GetChild(k).gameObject.name.Replace("(Clone)", "");
+                    }
+                }
             }
+
         }
 
         if (gameManager.GetComponent<GenerateOrder>().entreeMap.ContainsValue(tmp1))
@@ -240,14 +319,41 @@ public class OrderComplete : MonoBehaviour
 
         for (int i = 0; i < plate4.transform.GetChild(0).transform.childCount; i++)
         {
-            if (plate4.transform.GetChild(0).transform.GetChild(i).gameObject.activeSelf && tmp1 == "")
+            //for entree
+            if (plate4.transform.GetChild(0).transform.GetChild(i).name == "Entree")
             {
-                tmp1 = plate4.transform.GetChild(0).transform.GetChild(i).gameObject.name.Replace("(Clone)", "");
+                GameObject e_tmp = plate4.transform.GetChild(0).transform.GetChild(i).gameObject;
+
+                for (int k = 0; k < e_tmp.transform.childCount; k++)
+                {
+                    if (e_tmp.transform.GetChild(k).gameObject.activeSelf && tmp1 == "")
+                    {
+                        tmp1 = e_tmp.transform.GetChild(k).gameObject.name.Replace("(Clone)", "");
+                    }
+                    else if (e_tmp.transform.GetChild(k).gameObject.activeSelf && tmp2 == "")
+                    {
+                        tmp2 = e_tmp.transform.GetChild(k).gameObject.name.Replace("(Clone)", "");
+                    }
+                }
             }
-            else if (plate4.transform.GetChild(0).transform.GetChild(i).gameObject.activeSelf && tmp2 == "")
+            //for sides
+            else if (plate4.transform.GetChild(0).transform.GetChild(i).name == "Sides")
             {
-                tmp2 = plate4.transform.GetChild(0).transform.GetChild(i).gameObject.name.Replace("(Clone)", "");
+                GameObject s_tmp = plate4.transform.GetChild(0).transform.GetChild(i).gameObject;
+
+                for (int k = 0; k < s_tmp.transform.childCount; k++)
+                {
+                    if (s_tmp.transform.GetChild(k).gameObject.activeSelf && tmp1 == "")
+                    {
+                        tmp1 = s_tmp.transform.GetChild(k).gameObject.name.Replace("(Clone)", "");
+                    }
+                    else if (s_tmp.transform.GetChild(k).gameObject.activeSelf && tmp2 == "")
+                    {
+                        tmp2 = s_tmp.transform.GetChild(k).gameObject.name.Replace("(Clone)", "");
+                    }
+                }
             }
+
         }
 
         if (gameManager.GetComponent<GenerateOrder>().entreeMap.ContainsValue(tmp1))

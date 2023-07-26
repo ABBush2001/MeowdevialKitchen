@@ -30,6 +30,7 @@ public class MeadPour : MonoBehaviour
     {
         if (mead.transform.localScale.y >= 1)
         {
+            this.GetComponent<SpriteRenderer>().sprite = fullmead;
             this.GetComponent<MeadMinigameManager1>().StartPartTwo();
         }
     }
@@ -65,7 +66,5 @@ public class MeadPour : MonoBehaviour
                 this.GetComponent<SpriteRenderer>().sprite = m3;
             }
         }
-
-        this.GetComponent<SpriteRenderer>().sprite = fullmead;
     }
 }

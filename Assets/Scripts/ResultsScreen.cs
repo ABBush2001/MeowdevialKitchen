@@ -7,6 +7,7 @@ public class ResultsScreen : MonoBehaviour
 {
     public GameObject gameManager;
 
+    public GameObject tavernButton;
 
     public GameObject resultsScreen;
 
@@ -86,12 +87,15 @@ public class ResultsScreen : MonoBehaviour
 
         StartCoroutine(playSound());
         resultsScreen.SetActive(true);
+        tavernButton.SetActive(false);
+        LeanTween.scale(resultsScreen, new Vector3(0, 0, 0), 0.001f);
+        LeanTween.scale(resultsScreen, new Vector3(1, 1, 1), 1).setEase(LeanTweenType.easeOutElastic);
     }
 
     public void ReturnToGame()
     {
         resultsScreen.SetActive(false);
-
+        tavernButton.SetActive(true);
         gameManager.GetComponent<MeadMinigameManager>().UpdateMeadCount();
     }
 

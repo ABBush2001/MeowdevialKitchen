@@ -133,24 +133,32 @@ public class GenerateOrder : MonoBehaviour
          if(seat == 1)
          {
             panel1.SetActive(true);
+            LeanTween.scale(panel1, new Vector3(0, 0, 0), 0.001f);
+            LeanTween.scale(panel1, new Vector3(1, 1, 1), 1).setEase(LeanTweenType.easeOutElastic);
             entreeText1.text = entreeMap[entree];
             sideText1.text = sidesMap[side];
          }
          else if(seat == 2)
          {
             panel2.SetActive(true);
+            LeanTween.scale(panel2, new Vector3(0, 0, 0), 0.001f);
+            LeanTween.scale(panel2, new Vector3(1, 1, 1), 1).setEase(LeanTweenType.easeOutElastic);
             entreeText2.text = entreeMap[entree];
             sideText2.text = sidesMap[side];
          }
          else if(seat == 3)
          {
             panel3.SetActive(true);
+            LeanTween.scale(panel3, new Vector3(0, 0, 0), 0.001f);
+            LeanTween.scale(panel3, new Vector3(1, 1, 1), 1).setEase(LeanTweenType.easeOutElastic);
             entreeText3.text = entreeMap[entree];
             sideText3.text = sidesMap[side];
          }
          else
          {
             panel4.SetActive(true);
+            LeanTween.scale(panel4, new Vector3(0, 0, 0), 0.001f);
+            LeanTween.scale(panel4, new Vector3(1, 1, 1), 1).setEase(LeanTweenType.easeOutElastic);
             entreeText4.text = entreeMap[entree];
             sideText4.text = sidesMap[side];
          }

@@ -20,7 +20,7 @@ public class SidesCountdown : MonoBehaviour
 
     IEnumerator countdownClock(int i)
     {
-        float countdown = float.Parse(sidesCountdown.text);
+        float countdown = 5;
         Debug.Log(countdown);
         while (countdown > 0)
         {

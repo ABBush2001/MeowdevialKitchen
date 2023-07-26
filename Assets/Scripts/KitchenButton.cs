@@ -6,21 +6,31 @@ public class KitchenButton : MonoBehaviour
 {
     public GameObject gameManager;
 
-    public GameObject highlight;
+    public GameObject tavernButton;
+    public GameObject kitchenButton;
 
-    private void OnMouseDown()
+    //public GameObject highlight;
+
+    /*private void OnMouseDown()
     {
         gameManager.GetComponent<SceneManager2>().toKitchen();
     }
 
     private void OnMouseEnter()
     {
-        highlight.SetActive(true);
+        //highlight.SetActive(true);
     }
 
     private void OnMouseExit()
     {
-        highlight.SetActive(false);
+        //highlight.SetActive(false);
+    }*/
+
+    public void ToKitchen()
+    {
+        gameManager.GetComponent<SceneManager2>().toKitchen();
+        tavernButton.SetActive(true);
+        kitchenButton.SetActive(false);
     }
 
 }
